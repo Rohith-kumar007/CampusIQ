@@ -1,0 +1,110 @@
+* { box-sizing: border-box; font-family: "Segoe UI", Arial; }
+body { margin: 0; }
+
+/* LOGIN */
+.auth-body {
+    height: 100vh;
+    background: #f4f6fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    background: white;
+    width: 360px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #2c7be5;
+    color: white;
+    cursor: pointer;
+}
+
+.secondary { background: #eef2f7; color: #333; }
+.divider { margin: 15px 0; color: #999; }
+
+.password-wrapper { position: relative; }
+.toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.remember {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.remember input { width: auto; margin-right: 6px; }
+
+.hidden { display: none; }
+
+/* DASHBOARD */
+.layout { display: flex; height: 100vh; }
+
+.sidebar {
+    width: 230px;
+    background: #1e3c72;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar li {
+    list-style: none;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.main {
+    flex: 1;
+    padding: 30px;
+    background: #f4f6fb;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-box, .card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.student-table th, .student-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* DARK MODE */
+.dark body, .dark .main {
+    background: #121212;
+    color: white;
+}
+.dark .card, .dark .stat-box {
+    background: #1e1e1e;
+}

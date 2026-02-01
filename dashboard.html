@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CampusIQ | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initDashboard()">
+
+<div class="layout">
+
+    <aside class="sidebar">
+    <h2>CampusIQ</h2>
+        <ul>
+            <li onclick="showSection('overview')">Dashboard</li>
+            <li onclick="showSection('students')">Add Student</li>
+            <li onclick="showSection('studentListSection')">Registered Students</li>
+            <li onclick="showSection('feedback')">Feedback</li>
+            <li onclick="showSection('issues')">Issues</li>
+            <li id="usersMenu" onclick="showSection('users')">Users</li>
+            <li onclick="toggleDark()">🌙 Dark Mode</li>
+            <li onclick="logout()">Logout</li>
+        </ul>
+    </aside>
+
+    <main class="main">
+
+        <!-- OVERVIEW -->
+        <section id="overview" class="section">
+            <div class="stats">
+                <div class="stat-box"><h2 id="sc">0</h2><p>Students</p></div>
+                <div class="stat-box"><h2 id="fc">0</h2><p>Feedback</p></div>
+                <div class="stat-box"><h2 id="ic">0</h2><p>Issues</p></div>
+            </div>
+            <canvas id="chart"></canvas>
+        </section>
+
+        <!-- ADD STUDENT -->
+        <section id="students" class="section hidden">
+            <div class="card">
+                <input id="sname" placeholder="Name">
+                <input id="dept" placeholder="Department">
+                <input id="year" placeholder="Year">
+                <button onclick="addStudent()">Register Student</button>
+            </div>
+        </section>
+
+        <!-- STUDENT LIST -->
+        <section id="studentListSection" class="section hidden">
+            <div class="card">
+                <h3>Registered Students</h3>
+                <table class="student-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FEEDBACK -->
+        <section id="feedback" class="section hidden">
+            <div class="card">
+                <textarea id="feedbackInput" placeholder="Enter feedback"></textarea>
+                <button onclick="addFeedback()">Submit</button>
+            </div>
+        </section>
+
+        <!-- ISSUES -->
+        <section id="issues" class="section hidden">
+            <div class="card">
+                <textarea id="issueInput" placeholder="Describe issue"></textarea>
+                <button onclick="addIssue()">Report</button>
+            </div>
+        </section>
+
+        <!-- USERS -->
+        <section id="users" class="section hidden">
+            <div class="card">
+                <h3>Registered Users</h3>
+                <ul id="userList"></ul>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

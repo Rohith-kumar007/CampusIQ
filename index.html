@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CampusIQ | Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+<div class="auth-card">
+    <h1 class="brand">CampusIQ</h1>
+    <p class="subtitle">Sign in to continue</p>
+
+    <input id="loginUser" placeholder="Email">
+
+    <div class="password-wrapper">
+        <input id="loginPass" type="password" placeholder="Password">
+        <span class="toggle" onclick="togglePassword('loginPass')">👁️</span>
+    </div>
+
+    <label class="remember">
+        <input type="checkbox" id="rememberMe"> Remember me
+    </label>
+
+    <button onclick="login()">Login</button>
+    <p class="link" onclick="toggleForgot()">Forgot password?</p>
+
+    <div class="divider">or</div>
+
+    <input id="signupUser" placeholder="Email">
+
+    <div class="password-wrapper">
+        <input id="signupPass" type="password" placeholder="New Password">
+        <span class="toggle" onclick="togglePassword('signupPass')">👁️</span>
+    </div>
+
+    <select id="signupRole">
+        <option value="student">Student</option>
+        <option value="admin">Admin</option>
+    </select>
+
+    <button class="secondary" onclick="signup()">Create Account</button>
+
+    <div id="forgotBox" class="hidden">
+        <h3>Reset Password</h3>
+        <input id="forgotEmail" placeholder="Registered Email">
+        <button onclick="resetPassword()">Reset</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
